@@ -48,7 +48,8 @@
       "storage": [
         {
           "disk_size": "{{user `vm-disk-size`}}",
-          "disk_thin_provisioned": "{{user `thin_provision`}}"
+          "disk_thin_provisioned": "{{user `thin_provision`}}",
+          "disk_eagerly_scrub": "{{user `disk_eagerly_scrub`}}"
         }
       ],
       "type": "vsphere-iso",

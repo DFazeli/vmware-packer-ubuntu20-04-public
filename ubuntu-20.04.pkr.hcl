@@ -173,6 +173,11 @@ variable "thin_provision" {
   description = "Thin or Thick provisioning of the disk"
 }
 
+variable "disk_eagerly_scrub" {
+  type = bool
+  description = "eagrly scrub zeros"
+  default = false
+}
 
 variable "vm_disk_controller_type" {
   type = list(string)
@@ -238,6 +243,7 @@ source "vsphere-iso" "linux-ubuntu-server" {
     disk_size = var.vm_disk_size
     disk_controller_index = 0
     disk_thin_provisioned = var.thin_provision
+    disk_eagerly_scrub = var.disk_eagerly_scrub
   }
   network_adapters {
     network = var.vcenter_network
